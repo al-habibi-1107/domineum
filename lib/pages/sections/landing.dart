@@ -9,28 +9,31 @@ class LandingPage extends StatelessWidget {
     var device = MediaQuery.of(context).size;
     var content =
         "DOMINEUM CREDENTIAL VERIFICATION SYSTEM IS A 3 SIDED MARKETPLACE DESIGNED TO BRIDGE THE ONLINE AND OFFLINE WORLDS FOR SHARING VERIFIABLE DOCUMENTS AND CREDENTIALS BETWEEN ISSUING INSTITUTIONS, BUSINESSES/INDIVIDUALS AND 3RD PARTY VERIFIERS.";
-    return Container(
-      width: device.width,
-      height: device.height,
-      color: Color.fromRGBO(29, 29, 29, 1),
-      padding: EdgeInsets.symmetric(vertical: 50, horizontal: 50),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
+    return Material(
+      child: Container(
+        width: device.width,
+        height: device.height,
+        color: Color.fromRGBO(29, 29, 29, 1),
+        padding: EdgeInsets.symmetric(vertical: 50, horizontal: 50),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
 // NAVBAR
-          NavBar(),
-          SizedBox(
-            height: device.height * 0.1,
-          ),
+            NavBar(),
+            SizedBox(
+              height: device.height * 0.1,
+            ),
 // MAIN LANDING PAGE
-          LandingMain(device: device, content: content),
-          SizedBox(
-            height: 20,
-          ),
-          Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [Image.asset('arrow.png')])
-        ],
+            LandingMain(device: device, content: content),
+            SizedBox(
+              height: 20,
+            ),
+// ARROW
+            Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+              InkWell(onTap: () {}, child: Image.asset('arrow.png'))
+            ])
+          ],
+        ),
       ),
     );
   }
@@ -68,7 +71,8 @@ class LandingMain extends StatelessWidget {
               "VERIFICATION\nMADE EASY",
               style: TextStyle(
                   color: Colors.white,
-                  fontSize: 50,
+                  fontSize: 55,
+                  fontWeight: FontWeight.w200,
                   decoration: TextDecoration.none),
             ),
             SizedBox(
@@ -83,7 +87,8 @@ class LandingMain extends StatelessWidget {
                     color: Colors.white,
                     fontSize: 17,
                     decoration: TextDecoration.none,
-                    height: 1.3),
+                    fontWeight: FontWeight.w100,
+                    height: 1.5),
               ),
             ),
             SizedBox(
@@ -93,62 +98,68 @@ class LandingMain extends StatelessWidget {
             Row(
               children: [
 // LEFT CTA _ APP STORE
-                Container(
-                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(3),
-                      ),
-                      border: Border.all(color: Colors.white)),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Image.asset(
-                        'app-store-w.png',
-                        width: 20,
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        "App Store",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            decoration: TextDecoration.none),
-                      ),
-                    ],
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(3),
+                        ),
+                        border: Border.all(color: Colors.white)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Image.asset(
+                          'app-store-w.png',
+                          width: 20,
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          "App Store",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              decoration: TextDecoration.none),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 SizedBox(
                   width: 8,
                 ),
 // RIGHT CTA _ PLAY STORE
-                Container(
-                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(2),
-                      ),
-                      border: Border.all(color: Colors.white)),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Image.asset(
-                        'google-play-w.png',
-                        width: 20,
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        "Google Playstore",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            decoration: TextDecoration.none),
-                      ),
-                    ],
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(2),
+                        ),
+                        border: Border.all(color: Colors.white)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Image.asset(
+                          'google-play-w.png',
+                          width: 20,
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          "Google Playstore",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              decoration: TextDecoration.none),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],

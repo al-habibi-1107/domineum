@@ -8,65 +8,67 @@ class ProfileSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var device = MediaQuery.of(context).size;
-    return Container(
-      width: device.width,
-      height: device.height,
-      color: Colors.white,
-      child: Stack(
-        children: [
-// BACKGROUD IMAGE
-          Image.asset(
-            "bg-2.png",
-            fit: BoxFit.cover,
-          ),
-// LEVEL 2 STACK
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 60, horizontal: 40),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-// CENTER TITLE
-                Center(
-                  child: Text(
-                    "PROFILE TYPES",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 25,
-                        decoration: TextDecoration.none,
-                        height: 1.3),
-                  ),
-                ),
-// CARDS
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-// CARD 1
-                    RowCard(
-                      device: device,
-                      content: content,
-                      img: "c-1.png",
-                      title: "BUSINESS/ INDIVISUAL USER",
-                    ),
-// CARD 2
-                    RowCard(
-                      device: device,
-                      content: content,
-                      img: "c-2.png",
-                      title: "BUSINESS ISSUING INSTITUTION",
-                    ),
-// CARD 3
-                    RowCard(
-                      device: device,
-                      content: content,
-                      img: "c-3.png",
-                      title: "BUSINESS 3RD PARTY VERIFIER",
-                    ),
-                  ],
-                )
-              ],
+    return Material(
+      child: Container(
+        width: device.width,
+        height: device.height,
+        color: Colors.white,
+        child: Stack(
+          children: [
+            // BACKGROUD IMAGE
+            Image.asset(
+              "bg-2.png",
+              fit: BoxFit.cover,
             ),
-          )
-        ],
+            // LEVEL 2 STACK
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 60, horizontal: 40),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  // CENTER TITLE
+                  Center(
+                    child: Text(
+                      "PROFILE TYPES",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 25,
+                          decoration: TextDecoration.none,
+                          height: 1.3),
+                    ),
+                  ),
+                  // CARDS
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      // CARD 1
+                      RowCard(
+                        device: device,
+                        content: content,
+                        img: "c-1.png",
+                        title: "BUSINESS/ INDIVISUAL USER",
+                      ),
+                      // CARD 2
+                      RowCard(
+                        device: device,
+                        content: content,
+                        img: "c-2.png",
+                        title: "BUSINESS ISSUING INSTITUTION",
+                      ),
+                      // CARD 3
+                      RowCard(
+                        device: device,
+                        content: content,
+                        img: "c-3.png",
+                        title: "BUSINESS 3RD PARTY VERIFIER",
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
@@ -124,7 +126,8 @@ class RowCard extends StatelessWidget {
                 ),
               ),
 // BUTTON
-              GestureDetector(
+              InkWell(
+                onTap: () {},
                 child: Container(
                   width: 200,
                   height: 40,
